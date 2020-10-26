@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './style.scss';
 import { Drawer } from 'antd';
+import Menu from './menu';
+import { ReactComponent as BurgerMenu } from 'Assets/icon/menu_header.svg';
 
+console.log(Menu);
 const Header = () => {
 
     const [showDrawer, setShowDrawer] = useState(false);
@@ -11,20 +14,22 @@ const Header = () => {
     return (
         <div className="main-header">
             <Drawer
-                title="Basic Drawer"
-                placement="left"
+                title='Drawer Title'
+                placement='left'
                 closable={false}
                 onClose={_toggleDrawer}
                 visible={showDrawer}
-                headerStyle={{
-                    backgroundColor: 'hotpink'
-                }}
             >
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+                {
+                    Menu.map((menu, index) => (
+                        <div key={index} className="menu-list">
+                            {menu.icon}
+                            {menu.name}
+                        </div>
+                    ))
+                }
             </Drawer>
-            <button onClick={_toggleDrawer}>Click</button>
+            <BurgerMenu onClick={_toggleDrawer} />
         </div>
     )
 }

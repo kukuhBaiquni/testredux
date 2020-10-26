@@ -1,5 +1,64 @@
+@import 'Assets/scss/variable.scss';
+
 .main-header {
     height: 60px;
     width: 100%;
-    background-color: red;
+    background-color: $primaryColor;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+
+    svg {
+        width: 30px;
+        cursor: pointer;
+
+        path {
+            stroke: #fff;
+        }
+    }
+}
+
+.ant-drawer-wrapper-body {
+    .ant-drawer-header {
+        background-color: $primaryColor;
+
+        .ant-drawer-title {
+            color: white;
+            font-family: $bold;
+            font-size: 1.1rem;
+        }
+    }
+
+    .ant-drawer-body {
+        .menu-list {
+            display: flex;
+            cursor: pointer;
+            padding-left: 5px;
+            align-items: center;
+            font-size: 1rem;
+            transition: background-color .25s, padding .25s;
+            color: $primaryColor;
+            font-family: $bold;
+            background-color: #fff;
+            border-radius: 5px;
+            svg {
+                width: 22px;
+                margin-right: 5px;
+                path {
+                    fill: $primaryColor;
+                }
+            }
+        }
+        
+        .menu-list:hover {
+            background-color: $primaryColor;
+            padding-left: 20px;
+            color: white;
+            svg {
+                path {
+                    fill: #fff;
+                }
+            }
+        }
+    }
 }

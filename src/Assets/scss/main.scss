@@ -1,2 +1,10 @@
-@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css?family=Asap&display=swap');
+
 @import './variable.scss';
+@import '~antd/dist/antd.css';
+
+@import 'Layout/Header/style.scss';
+
+body {
+    font-family: $regular;
+}
